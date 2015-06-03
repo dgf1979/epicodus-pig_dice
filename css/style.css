@@ -7,6 +7,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
 }
 
+body {
+  background: url(../img/Pig_trans.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
 .dice {
   height: 80px;
   width: 80px;
@@ -65,10 +77,10 @@ div.disablePlayer {
   background-color: rgba(0,0,0,0.7);
 }
 
-.hold {
+/*.hold {
   text-align: center;
   margin: auto;
-}
+}*/
 
 .turn {
   border-style: dotted;
@@ -83,4 +95,8 @@ div.disablePlayer {
   background: url(../img/firework1.gif);
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.container {
+  margin-top: 10px;
 }
