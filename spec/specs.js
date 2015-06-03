@@ -1,6 +1,12 @@
-describe("foo", function() {
+describe("Dice", function() {
   "use strict";
-  it("is some function or expectation", function() {
-    expect(foo("bar")).to.equal(false);
+
+  describe("#roll", function() {
+    it("returns a random number from one to six", function() {
+      var specDice = new Dice("Drew");
+      expect(typeof (specDice.roll())).to.equal("number");
+    });
   });
+
+
 });
