@@ -12,9 +12,39 @@
   </head>
   <body>
 
-    <div>
-      
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 well">
+          <h2><span id="player1name">Player 1</span> - Score: <span id="player1totalScore"></span></h2>
+          <div id="player1">
+            <div id="player1dice" class="dice"></div>
+          </div>
+          <div id="player1turnScore"></div>
+          <span id="player1hold" class="holdButton btn btn-primary">HOLD</span>
+        </div>
+        <div class="col-xs-6 well">
+          <h2><span id="player2name">Player 2</span> - Score: <span id="player2totalScore"></span></h2>
+          <div id="player2">
+            <div id="player2dice" class="dice"></div>
+          </div>
+          <div id="player2turnScore"></div>
+          <span id="player2hold" class="holdButton btn btn-primary">HOLD</span>
+        </div>
+      </div>
     </div>
 
-  </body>
+    <div id="modalOverlay" class="overlay">
+      <div id="playerNames" class="well">
+        <form id="newGame">
+            <label for="player1">Player 1 Name:</label>
+            <input type="text" id="player1" placeholder="Player Name" required>
+            <br>
+            <label for="player1">Player 2 Name:</label>
+            <input type="text" id="player2" placeholder="Player Name" required>
+            <br><br>
+            <button type="submit">Play!</button>
+        <form>
+      </div>
+    </div>
+</body>
 </html>
