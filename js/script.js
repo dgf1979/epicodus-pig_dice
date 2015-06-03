@@ -1,3 +1,5 @@
+var player1 = new Player("Player1");
+var player2 = new Player("Player2");
 
 function Player(name) {
   this.name = name;
@@ -101,9 +103,12 @@ $( document ).ready(function() {
   //handles clicking play on new game modal form
   $("form#newGame").submit(function(event) {
     event.preventDefault();
-    // set names from form
-    $("span#player1name").text($("input#player1").val());
-    $("span#player2name").text($("input#player2").val());
+    // get names from form
+    player1 = new Player($("input#player1").val());
+    player2 = new Player($("input#player2").val());
+    // set names on screen
+    $("span#player1name").text(player1.name);
+    $("span#player2name").text(player2.name);
     // dismiss overlay
     $("div#modalOverlay").hide();
   });
