@@ -89,19 +89,31 @@ $( document ).ready(function() {
   $("div#player2turnScore").text(0);
 
   // handles clicking on the dice to roll and update scores
-  $("div#player1dice").click(function() {
+  $("div.dice").click(function() {
     var rollResult = rollDice();
+
+    var currentPlayerScore;
+    if (this.id === "player1dice") {
+      currentPlayerScore = $("div#player1turnScore");
+    } else {
+      currentPlayerScore = $("div#player2turnScore");
+    }
+
+    if (rollResult === 1) {
+      currentPlayerScore.text(0);
+    } else {
+      currentPlayerScore.text(parseInt(currentPlayerScore.text()) + rollResult);
+    }
+
     dotDice(rollResult, $(this));
-    var score = $("div#player1turnScore").text();
-    $("div#player1turnScore").text(parseInt(score) + rollResult);
   });
 
-  $("div#player2dice").click(function() {
-    var rollResult = rollDice();
-    dotDice(rollResult, $(this));
-    var score = $("div#player2turnScore").text();
-    $("div#player2turnScore").text(parseInt(score) + rollResult);
-  });
+  // $("div#player2dice").click(function() {
+  //   var rollResult = rollDice();
+  //   dotDice(rollResult, $(this));
+  //   var score = $("div#player2turnScore").text();
+  //   $("div#player2turnScore").text(parseInt(score) + rollResult);
+  // });
 
   //handles clicking play on new game modal form
   $("form#newGame").submit(function(event) {
