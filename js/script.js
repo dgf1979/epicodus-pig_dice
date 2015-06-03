@@ -69,6 +69,31 @@ addDot = function(x, y, dice) {
   // $("div.dots:last").css({ top: y, left: x });
 }
 
+//switch turns
+whoseTurn = function(player) {
+  $("div#whoseTurn").text(player.name.toUpperCase() + "'S TURN!");
+
+  if (player1.name === player.name) {
+    //player 2 can't play
+    var totalScore = parseInt($("span#player2totalScore").text());
+    var turnScore = parseInt($("span#player2turnScore").text());
+    $("span#player2totalScore").text(totalScore + turnScore);
+    $("span#player2turnScore").text(0);
+
+    $("#player2panel").slideUp( "slow", function() {});
+    $("#player1panel").slideDown( "slow", function() {});
+  } else {
+
+    var totalScore = parseInt($("span#player1totalScore").text());
+    var turnScore = parseInt($("span#player1turnScore").text());
+    $("span#player1totalScore").text(totalScore + turnScore);
+    $("span#player1turnScore").text(0);
+
+    $("#player2panel").slideDown( "slow", function() {});
+    $("#player1panel").slideUp( "slow", function() {});
+  }
+}
+
 //jQuery
 $( document ).ready(function() {
   "use strict";
@@ -84,9 +109,9 @@ $( document ).ready(function() {
 
   //set total and turn scores to 0 to start
   $("span#player1totalScore").text(0);
-  $("div#player1turnScore").text(0);
+  $("span#player1turnScore").text(0);
   $("span#player2totalScore").text(0);
-  $("div#player2turnScore").text(0);
+  $("span#player2turnScore").text(0);
 
   // handles clicking on the dice to roll and update scores
   $("div.dice").click(function() {
@@ -94,26 +119,28 @@ $( document ).ready(function() {
 
     var currentPlayerScore;
     if (this.id === "player1dice") {
-      currentPlayerScore = $("div#player1turnScore");
+      currentPlayerScore = $("span#player1turnScore");
     } else {
-      currentPlayerScore = $("div#player2turnScore");
+      currentPlayerScore = $("span#player2turnScore");
     }
 
     if (rollResult === 1) {
       currentPlayerScore.text(0);
+      if (currentPlayerScore.attr("id") === "player1turnScore") {
+        console.log("player 2's turn now");
+        // player 1 hit 0
+        whoseTurn(player2);
+      } else {
+        console.log("player 2's turn now");
+        whoseTurn(player1);
+      }
+
     } else {
       currentPlayerScore.text(parseInt(currentPlayerScore.text()) + rollResult);
     }
 
     dotDice(rollResult, $(this));
   });
-
-  // $("div#player2dice").click(function() {
-  //   var rollResult = rollDice();
-  //   dotDice(rollResult, $(this));
-  //   var score = $("div#player2turnScore").text();
-  //   $("div#player2turnScore").text(parseInt(score) + rollResult);
-  // });
 
   //handles clicking play on new game modal form
   $("form#newGame").submit(function(event) {
@@ -126,20 +153,17 @@ $( document ).ready(function() {
     $("span#player2name").text(player2.name);
     // dismiss overlay
     $("div#modalOverlay").hide();
+    whoseTurn(player1);
   });
 
 
   // handles clicking 'hold' to end turn and add score to total score
   $("span.holdButton").click(function() {
     if (this.id === "player1hold") {
-
+      whoseTurn(player2);
     } else {
-
+      whoseTurn(player1);
     }
-
   });
-
-
-
 
 });
