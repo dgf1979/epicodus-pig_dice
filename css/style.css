@@ -9,6 +9,7 @@
   width: 80px;
   border-radius: 8px;
   background-color: red;
+  position: relative;
 }
 
 .dice:hover {
@@ -23,7 +24,7 @@
   border-color: silver;
   border-style: solid;
   border-radius: 8px;
-  position: relative;
+  position: absolute;
   display: inline-block:
 }
 

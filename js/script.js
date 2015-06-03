@@ -23,40 +23,41 @@ var foo = function(bar) {
 
 var dotDice = function(number, jqDiceDiv) {
   jqDiceDiv.empty();
+  console.log("rolled a " + number);
 
   switch(number) {
     case 1:
         addDot("32px","32px", jqDiceDiv);
         break;
     case 2:
-        addDot("20px","20px", jqDiceDiv);
-        addDot("44px","30px", jqDiceDiv);
+        addDot("19px","19px", jqDiceDiv);
+        addDot("38px","38px", jqDiceDiv);
         break;
     case 3:
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
+        addDot("12px","12px", jqDiceDiv);
+        addDot("32px","32px", jqDiceDiv);
+        addDot("52px","52px", jqDiceDiv);
         break;
     case 4:
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
+        addDot("12px","12px", jqDiceDiv);
+        addDot("12px","60px", jqDiceDiv);
+        addDot("60px","12px", jqDiceDiv);
+        addDot("60px","60px", jqDiceDiv);
         break;
     case 5:
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
+        addDot("12px","12px", jqDiceDiv);
+        addDot("12px","60px", jqDiceDiv);
+        addDot("60px","12px", jqDiceDiv);
+        addDot("60px","60px", jqDiceDiv);
+        addDot("32px","32px", jqDiceDiv);
         break;
     case 6:
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
-        addDot("8px","8px", jqDiceDiv);
+        addDot("12px","12px", jqDiceDiv);
+        addDot("12px","32px", jqDiceDiv);
+        addDot("12px","60px", jqDiceDiv);
+        addDot("60px","12px", jqDiceDiv);
+        addDot("60px","32px", jqDiceDiv);
+        addDot("60px","60px", jqDiceDiv);
         break;
   }
 }
