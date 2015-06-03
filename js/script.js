@@ -65,7 +65,8 @@ var dotDice = function(number, jqDiceDiv) {
 //add a dot to a dice at the specified position
 addDot = function(x, y, dice) {
   dice.append("<div class='dots'></div>");
-  $("div.dots:last").css({ top: y, left: x });
+  dice.children(".dots:last").css({ top: y, left: x });
+  // $("div.dots:last").css({ top: y, left: x });
 }
 
 //jQuery
@@ -88,17 +89,18 @@ $( document ).ready(function() {
   $("div#player2turnScore").text(0);
 
   // handles clicking on the dice to roll and update scores
-  $("div.dice").click(function() {
+  $("div#player1dice").click(function() {
     var rollResult = rollDice();
     dotDice(rollResult, $(this));
+    var score = $("div#player1turnScore").text();
+    $("div#player1turnScore").text(parseInt(score) + rollResult);
+  });
 
-    if(this.id === "player1dice") {
-      var score = $("div#player1turnScore").text();
-      $("div#player1turnScore").text(parseInt(score) + rollResult);
-    } else {
-      var score = $("div#player2turnScore").text();
-      $("div#player2turnScore").text(parseInt(score) + rollResult);
-    }
+  $("div#player2dice").click(function() {
+    var rollResult = rollDice();
+    dotDice(rollResult, $(this));
+    var score = $("div#player2turnScore").text();
+    $("div#player2turnScore").text(parseInt(score) + rollResult);
   });
 
   //handles clicking play on new game modal form
