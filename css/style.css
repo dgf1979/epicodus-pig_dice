@@ -3,6 +3,9 @@
   color: white;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+}
 
 .dice {
   height: 80px;
@@ -10,6 +13,8 @@
   border-radius: 8px;
   background-color: red;
   position: relative;
+  text-align: center;
+  margin: auto;
 }
 
 .dice:hover {
@@ -58,4 +63,24 @@ div#whoseTurn {
 div.disablePlayer {
   z-index: 5;
   background-color: rgba(0,0,0,0.7);
+}
+
+.hold {
+  text-align: center;
+  margin: auto;
+}
+
+.turn {
+  border-style: dotted;
+  border-width: 3px;
+  border-color: silver;
+  border-radius: 4px;
+  margin: 8px;
+  text-align: center;
+}
+
+.firework {
+  background: url(../img/firework1.gif);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }

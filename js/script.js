@@ -82,6 +82,10 @@ whoseTurn = function(player) {
 
     $("#player2panel").slideUp( "slow", function() {});
     $("#player1panel").slideDown( "slow", function() {});
+
+    var totalScore = parseInt($("span#player2totalScore").text());
+    console.log("player 2 total score: " + totalScore);
+    if (totalScore >= 100) { winner(player2) };
   } else {
 
     var totalScore = parseInt($("span#player1totalScore").text());
@@ -91,7 +95,18 @@ whoseTurn = function(player) {
 
     $("#player2panel").slideDown( "slow", function() {});
     $("#player1panel").slideUp( "slow", function() {});
+
+    var totalScore = parseInt($("span#player1totalScore").text());
+    console.log("player 1 total score: " + totalScore);
+    if (totalScore >= 100) { winner(player1); };
   }
+}
+
+//WINNER!
+winner = function(player) {
+  $("body").addClass("firework");
+
+  $("div#whoseTurn").text(player.name.toUpperCase() + " WINS!!");
 }
 
 //jQuery
