@@ -20,6 +20,24 @@ var foo = function(bar) {
   return false;
 };
 
+var sneakyPig = function() {
+  "use strict";
+  var bottom = $(window).height();
+  var right = $(window).width();
+
+  $("body").append("<img src='img/Pig_trans.png' id='sneakyPig'>");
+  $( "#sneakyPig" ).css({"position":"fixed"});
+  $( "#sneakyPig" ).css({"top":bottom});
+  $( "#sneakyPig" ).css({"left":right});
+
+  $( "#sneakyPig" ).animate({
+    left: "-=" + Math.floor(right / 2),
+    top: "-=" + Math.floor(bottom / 2)
+  }, 5000, function() {
+    // Animation complete.
+  });
+}
+
 
 var dotDice = function(number, jqDiceDiv) {
   jqDiceDiv.empty();
@@ -169,6 +187,8 @@ $( document ).ready(function() {
     // dismiss overlay
     $("div#modalOverlay").hide();
     whoseTurn(player1);
+
+    sneakyPig(); // the sneaky pig!
   });
 
 

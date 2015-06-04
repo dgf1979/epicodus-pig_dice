@@ -8,10 +8,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: url(../img/Pig_trans.png);
+  /*background: url(../img/Pig_trans.png);
   background-size: 50%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center bottom;*/
   height: 100%;
 }
 

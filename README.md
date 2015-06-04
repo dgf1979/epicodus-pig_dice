@@ -1,22 +1,22 @@
-## [APPNAME] ##
+## Pig Dice ##
 
 This application is meant to fulfill the requirements of an assignment through Epicodus code school. For more information on Epicodus, see <http://www.epicodus.com/>.
 
 ### Description ###
 
-[simple app description]
+A pig dice game in JavaScript
 
-**Assignment:** [assignment title]
+**Assignment:** JavaScript Week 2 (Wednesday)
 
 **<https://www.learnhowtoprogram.com/table-of-contents>**
 
 ### Author(s) ###
 
-Andrew Finstrom
+Andrew Finstrom & Chris Sefkin
 
 ### Setup ###
 ```
-    setup code or details here
+    pig_dice.html
 ```
 
 ### License ###
