@@ -20,13 +20,20 @@ html {
 }
 
 .dice {
-  height: 80px;
-  width: 80px;
-  border-radius: 8px;
-  background-color: red;
+  height: 120px;
+  width: 120px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, red, #990000);
   position: relative;
   text-align: center;
   margin: auto;
+  border-width: 4px;
+  border-color: red;
+  border-style: solid;
+  border-top-color: #FF6666;
+  border-left-color: #FF6666;
+  border-bottom-color: #660000;
+  border-right-color: #660000;
 }
 
 .dice:hover {
@@ -34,15 +41,19 @@ html {
 }
 
 .dots {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border-width: 1px;
+  height: 24px;
+  width: 24px;
+  background: radial-gradient(white, #F4F4F4, black);
+  border-width: 2px;
   border-color: silver;
-  border-style: solid;
-  border-radius: 8px;
+  border-radius: 12px;
   position: absolute;
-  display: inline-block:
+  display: inline-block;
+  border-style: solid;
+  border-top-color: #A00000;
+  border-left-color: #660000;
+  border-bottom-color: #FF3030;
+  border-right-color: #FF6666;
 }
 
 div#playerNames {
@@ -99,4 +110,8 @@ div.disablePlayer {
 
 .container {
   margin-top: 10px;
+}
+
+.dicePanel {
+  margin: 32px;
 }

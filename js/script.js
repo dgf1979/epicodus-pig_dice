@@ -45,37 +45,37 @@ var dotDice = function(number, jqDiceDiv) {
 
   switch(number) {
     case 1:
-        addDot("32px","32px", jqDiceDiv);
+        addDot("44px","44px", jqDiceDiv);
         break;
     case 2:
-        addDot("19px","19px", jqDiceDiv);
-        addDot("38px","38px", jqDiceDiv);
+        addDot("24px","24px", jqDiceDiv);
+        addDot("64px","64px", jqDiceDiv);
         break;
     case 3:
-        addDot("12px","12px", jqDiceDiv);
-        addDot("32px","32px", jqDiceDiv);
-        addDot("52px","52px", jqDiceDiv);
+        addDot("14px","14px", jqDiceDiv);
+        addDot("44px","44px", jqDiceDiv);
+        addDot("74px","74px", jqDiceDiv);
         break;
     case 4:
-        addDot("12px","12px", jqDiceDiv);
-        addDot("12px","60px", jqDiceDiv);
-        addDot("60px","12px", jqDiceDiv);
-        addDot("60px","60px", jqDiceDiv);
+        addDot("14px","14px", jqDiceDiv);
+        addDot("14px","74px", jqDiceDiv);
+        addDot("74px","14px", jqDiceDiv);
+        addDot("74px","74px", jqDiceDiv);
         break;
     case 5:
-        addDot("12px","12px", jqDiceDiv);
-        addDot("12px","60px", jqDiceDiv);
-        addDot("60px","12px", jqDiceDiv);
-        addDot("60px","60px", jqDiceDiv);
-        addDot("32px","32px", jqDiceDiv);
+        addDot("14px","14px", jqDiceDiv);
+        addDot("14px","74px", jqDiceDiv);
+        addDot("74px","14px", jqDiceDiv);
+        addDot("74px","74px", jqDiceDiv);
+        addDot("44px","44px", jqDiceDiv);
         break;
     case 6:
-        addDot("12px","12px", jqDiceDiv);
-        addDot("12px","32px", jqDiceDiv);
-        addDot("12px","60px", jqDiceDiv);
-        addDot("60px","12px", jqDiceDiv);
-        addDot("60px","32px", jqDiceDiv);
-        addDot("60px","60px", jqDiceDiv);
+        addDot("24px","14px", jqDiceDiv);
+        addDot("24px","44px", jqDiceDiv);
+        addDot("24px","74px", jqDiceDiv);
+        addDot("64px","14px", jqDiceDiv);
+        addDot("64px","44px", jqDiceDiv);
+        addDot("64px","74px", jqDiceDiv);
         break;
   }
 }
